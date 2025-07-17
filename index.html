@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
@@ -416,37 +418,6 @@
   </div>
 </section>
 
-<script>
-  const images = ["leads.svg", "Sell-smart.svg", "tax-credit.svg", "leads.svg"];
-  let currentSlide = 0;
-  const imgEl = document.getElementById("slideshow");
-
-  function showSlide(index) {
-    currentSlide = index;
-    imgEl.src = images[index];
-    updateDots();
-  }
-
-  function updateDots() {
-    for (let i = 0; i < images.length; i++) {
-      const dot = document.getElementById("dot" + i);
-      dot.classList.remove("bg-gray-400");
-      dot.classList.add("bg-gray-300");
-    }
-    document.getElementById("dot" + currentSlide).classList.add("bg-gray-400");
-  }
-
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % images.length;
-    showSlide(currentSlide);
-  }, 4000);
-
-  showSlide(0);
-</script>
-
-            </div>
-        </div> 
-    </section>
 
     <!-- CTA Section -->
     <section class="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
@@ -576,5 +547,32 @@
         const mainChart = new ApexCharts(document.querySelector("#mainChart"), mainOptions);
         mainChart.render();
     </script>
+    <script>
+  const images = ["leads.svg", "Sell-smart.svg", "tax-credit.svg", "leads.svg"];
+  let currentSlide = 0;
+  const imgEl = document.getElementById("slideshow");
+
+  function showSlide(index) {
+    currentSlide = index;
+    imgEl.src = images[index];
+    updateDots();
+  }
+
+  function updateDots() {
+    for (let i = 0; i < images.length; i++) {
+      const dot = document.getElementById("dot" + i);
+      dot.classList.remove("bg-gray-400");
+      dot.classList.add("bg-gray-300");
+    }
+    document.getElementById("dot" + currentSlide).classList.add("bg-gray-400");
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % images.length;
+    showSlide(currentSlide);
+  }, 4000);
+
+  showSlide(0);
+</script>
 </body>
 </html>
